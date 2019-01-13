@@ -30,12 +30,12 @@ TextyleFLIP.js requires **jQuery** and **textyleF.js** ( or **textyleF.min.js**)
 
  **flip effect**  
  
-		transform : rotateY(xxxdeg);  //you can also use 'rotateX' together.  
-		(transform-origin : xxx;) //If you want.  
+	transform : rotateY(xxxdeg);  //you can also use 'rotateX' together.  
+	(transform-origin : xxx;) //If you want.  
     	
  **fade effect**  
  
-		opacity: 0;
+	opacity: 0;
 
 ### example 1
     target {
