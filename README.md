@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![enter image description here](https://user-images.githubusercontent.com/38127448/50680443-11477c80-104b-11e9-88a8-ec95cccd62af.gif)
 
 # Textyle.js
