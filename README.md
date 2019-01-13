@@ -1,51 +1,61 @@
-<<<<<<< HEAD
-![enter image description here](https://user-images.githubusercontent.com/38127448/50680443-11477c80-104b-11e9-88a8-ec95cccd62af.gif)
+![enter image description here](https://user-images.githubusercontent.com/38127448/51084054-3a60bf00-1767-11e9-9683-3dd3e2907d11.gif)
 
-# Textyle.js
+# TextyleFLIP.js
 
-A simple text effect with jQuery and tiny CSS.
+A flip text revealing effect with jQuery and tiny CSS.
 
 # How to use
 
 ## JS
 
-Textyle.js requires **jQuery** and **textyle.js** ( or **textyle.min.js**).  
-Easing pattern can be extended by **jquery.easing.js**.
+TextyleFLIP.js requires **jQuery** and **TextyleFLIP.js** ( or **TextyleFLIP.min.js**).  
 
 ### read
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="textyle.min.js"></script>
+	<script src="TextyleFLIP.min.js"></script>
 	
 ### call ( most simply )
 
-	$('target').textyle();
+	$('target').textyleF();
 
-## CSS
+## CSS (with vendor prefix, if necessary)
 
- ### target element
+ ### target element  
 
- opacity: 0;
+	opacity: 0;  
+	perspective: xxx; //3d effective dose
 
 ### span (as child element)
 
- - **translate effect**
-		position: relative;
-		top: xxx;
-		left: xxx;
+ - **flip effect**  
+		transform : rotateY(xxxdeg);  //you can also use 'rotateX' together.  
+		(transform-origin : xxx;) //If you want.  
     	
- - **fade effect**
+ - **fade effect**  
 		opacity: 0;
 
-### example
+### example 1
     target {
     	opacity: 0;
+			perspective : 200px;
     }
     target span {
-    	/* translate effect */
-    	position: relative;
-    	top: 10px;
-    	left: 10px;
+    	/* flip effect */
+    	transform : rotateY(-90deg);
+    	/* fade effect */
+    	opacity: 0;
+    }
+
+### example 2
+    target {
+    	opacity: 0;
+			perspective : 200px;
+    }
+    target span {
+    	/* flip effect */
+    	transform : rotateY(-90deg) rotateX(45deg);
+			transform-origin : -50% 75%;
     	/* fade effect */
     	opacity: 0;
     }
@@ -56,32 +66,29 @@ You can choose some following options or add callback function.
 Values below is default.
 
 	$('target').textyle({
-		duration : 400,
-		delay : 100,
-		easing : 'swing',
+		duration : 1000,
+		delay : 150,
+		easing : 'ease',
 		callback : null
 	});
 
-Easing property can be extended by **jquery.easing.js**.  
-If you want , add reading script below next to jQuery.
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
+You can use CSS easing property or cubic-bezier as 'easing' property.
 
 ### example
 
-    $('target').textyle({
-    	duration : 600,
-    	delay : 150,
-    	easing : 'linear',
-    	callback : function(){
-	   		$(this).css({
-	   		color :  'coral',
-	   		transition :  '1s',
-	   		});
-    	}
+    $('target').textyleF({
+      duration : 2000,
+      delay : 200,
+      easing : 'cubic-bezier(0.785, 0.135, 0.15, 0.86)',
+      callback : function(){
+        $(this).css({
+          color : '#fff',
+          transition : '1s',
+        });
+        $('.desc').css('opacity',1);
+      }
     });
 
 # DEMO
 
- [codepen](https://codepen.io/mycreatesite/pen/vvpmgy)
+ [codepen](https://codepen.io/mycreatesite/pen/OrZVem)

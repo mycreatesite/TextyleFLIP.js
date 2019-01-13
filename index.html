@@ -2,32 +2,30 @@
 <html lang="ja">
 	<head>
 		<meta charset="utf-8">
-		<title>Textyle.js</title>
+		<title>TextyleFLIP.js</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<p class="ex1">TEXTYLE</p>
-		<p class="ex2">TEXTYLE</p>
+		<p class="ex2">FLIP</p>
 		<p class="desc">- Simple Text Effect -</p>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="textyle.min.js"></script>
+		<script src="textyleF.min.js"></script>
 		<script>
 			$(window).on('load',function(){
-				//simple use
-				$('.ex1').textyle();
-				//you can select options or add callback
-				$('.ex2').textyle({
-									duration : 400,
-									delay : 100,
-									easing : 'swing',
-									callback : function(){
-										$(this).css({
-											color : 'coral',
-											transition : '1s',
-										});
-										$('.desc').css('opacity',1);
-									}
-								});
+				$('.ex1').textyleF();
+				$('.ex2').textyleF({
+					duration : 2000,
+					delay : 200,
+					easing : 'cubic-bezier(0.785, 0.135, 0.15, 0.86)',
+					callback : function(){
+						$(this).css({
+						color : '#fff',
+						transition : '1s',
+						});
+						$('.desc').css('opacity',1);
+					}
+					});
 			});
 		</script>
 	</body>
