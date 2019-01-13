@@ -67,7 +67,7 @@ TextyleFLIP.js requires **jQuery** and **textyleF.js** ( or **textyleF.min.js**)
 You can choose some following options or add callback function.  
 Values below is default.
 
-	$('target').textyle({
+	$('target').textyleF({
 		duration : 1000,
 		delay : 150,
 		easing : 'ease',
