@@ -8,12 +8,12 @@ A flip text revealing effect with jQuery and tiny CSS.
 
 ## JS
 
-TextyleFLIP.js requires **jQuery** and **TextyleFLIP.js** ( or **TextyleFLIP.min.js**).  
+TextyleFLIP.js requires **jQuery** and **textyleF.js** ( or **textyleF.min.js**).  
 
 ### read
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="TextyleFLIP.min.js"></script>
+	<script src="textyleF.min.js"></script>
 	
 ### call ( most simply )
 
