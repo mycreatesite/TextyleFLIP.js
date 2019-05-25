@@ -1,5 +1,5 @@
 /*
- * TextyleFLIP.js
+ * TextyleFLIP.js - v2.0
  * https://github.com/mycreatesite/Textyle.js
  * MIT licensed
  * Copyright (C) 2019 ma-ya's CREATE
@@ -30,11 +30,11 @@
 		return this.each(function(i){
 			var child = target.children('span');
 			target.css('opacity',1);
+			child.css('display','inline-block');
 			child.each(function(i){
 				$(this).delay(setting.delay*i)
 					.queue(function(next) {
 					$(this).css({
-						display : 'inline-block',
 						transform : 'rotateY(0deg) rotateX(0deg)',
 						opacity : 1,
 						transitionDuration : setting.duration + 'ms',
@@ -46,8 +46,6 @@
 					$(this).on('transitionend', function() {
 						setting.callback.call(this);
 					});
-				} else {
-					console.error('Textyle.js: `setting.callback` must be a function.');
 				}
 			});
 		});
